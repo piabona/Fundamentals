@@ -114,34 +114,20 @@
   - 'if'와 'else'문을 이용해서 삼항연산을 수행 (1 true 값, 2 조건, 3 else값)
   - <true 일때 사용할 값> if <condition> else <false 일때 사용할 값>
 - **컴프리헨션(comprehension)**
-  - for문, if문과 동일 결과를 간단히 한줄로 리스트화해주는 방법. 반복가능한 객체를 만들때 활용, 활용도 매우 높음!
+  - for문, if문(옵션)과 동일 결과를 간단히 한줄로 리스트화해주는 방법. 반복가능한 객체를 만들때 활용, 활용도 매우 높음!
   - list, dict, 자료형을 간단하게 만들기 위한 문법 (tuple은 불가, set은 가능은 하나 잘 사용 안함)
-  - 특히 새로운 리스트 만들때 append로 담지 않아도 되어 편리함
+  - 특히 새로운 리스트 만들때 append로 여러줄로 담지 않아도 되고, 속도도 더 빠름 (%%timeit으로 시간 비교 가능)
     ```python
-    
-
-			
-			- num list에서 짝수만 담기
-			- 
-		- numlist에서 짝수는 제곱하고, 홀수는 그대로 담고 싶다면?
-			- 
-		- 중첩 반복문을 이용해, 2~9단까지 문자열 리스트에 담아보기
-			- 
-		- 컴프리헨션이 더 빠름을 확인해보자!  (%%timeit)
-			- 
-		- 컴프리헨션 예시
-			- 
-			- 
-		- 연습문제  (for 문을 컴프리헨션으로 변환)
-			- 
-			- 
-			- 
-			- 
-			- 
-			- 
-			  
-			  - 이런문제 진짜 많음. 결측치 제외하고 나서, 그다음에 평균으로 결측치 채우는 경우들
-			- 
-			- 
-			- 
-			- 
+    # 제곱하기 
+    result = [data**2 for data in range(1,6)]
+    # 짝수만 추출
+    result = [num for num in num_list if num%2 == 0]
+    # 짝수에만 조건 걸기 (if)
+    result = [num**2 if num%2 == 0 else num for num in num_list]
+    # 중첩 반복문으로 구구단 만들어보기
+    result = [f'{n} x {i} = {n*i}' for n in range(2,10) for i in range(2,10)]
+    # zip함수, 요소끼리 합
+    result = [sum(x) for x in zip((1,2,3),(10,20,30),(100,200,300))]
+    # 특정 확장자만 담기
+    result = [i for i in files if i.endswith('py') or i.endswith('exe')
+    ```
