@@ -67,7 +67,7 @@
     ```
 ## For문 관련 함수 
 
-- enumerate 함수 
+- **enumerate** 함수 
   - iterable한 객체를 꺼낼 때, 인덱스도 같이 꺼낼 수 있는 객체를 생성해준다. 
   - for문에서는 index를 같이 뽑아야 할 때가 많아 활용도 매우 높은 중요한 함수!
   - enumerate 함수의 결과는 그 자체로 print out되지 않음. list로 변환해 확인 가능함
@@ -78,3 +78,70 @@
     for index, score in enumerate(score_list):
       print(f"{index} 번째 점수는 {score}입니다.")
     ```
+- **zip** 함수
+  - 여러개의 iterable한 객체를 병렬로 꺼낼 수 있는 객체를 생성해줌 / 2개 이상의 객체 가능함
+    ```python
+    #zip함수 활용시
+    for c,s in zip(class_list, score_list) :
+      print(f"{c}의 점수는 {s} 입니다")
+
+    #리스트, 인덱스 메소드 활용시 (더 복잡)
+    length = len(class_list)
+    for i in range(length):
+      print(f"{class_list[i]}의 점수는 {score_list[i]} 입니다")
+    ```
+- dictionary 딕셔너리에서의 for 문
+  - 딕셔너리에서 출력은 순서에 상관없이 출력이 되어서, 순서가 문제가 될 시에는 Index, list활용하기
+  - score_dict.items(), keys(), values() 활용 
+    ```python
+    #keys 활용 
+    for x in score_dict.keys() :
+      print(f"{x}는 {score_dict[x]}점")
+    #values 활용
+    for v in score_dict.values() :
+      print(v)
+    #items 활용 - key, value 모두 추출
+    for k,v in score_dict.items() :
+      print(k,v)
+    ```
+
+## 컴프리헨션(comprehension)
+
+- **파이써닉(Pythonic)** 코드
+	- 간결하고 가독성있게 코딩하는 방법
+	- zip, enumerate 코드 등을 활용해서 간결하게 코딩하는 것
+- 삼(3)항연산자 
+  - 'if'와 'else'문을 이용해서 삼항연산을 수행 (1 true 값, 2 조건, 3 else값)
+  - <true 일때 사용할 값> if <condition> else <false 일때 사용할 값>
+- **컴프리헨션(comprehension)**
+  - for문, if문과 동일 결과를 간단히 한줄로 리스트화해주는 방법. 반복가능한 객체를 만들때 활용, 활용도 매우 높음!
+  - list, dict, 자료형을 간단하게 만들기 위한 문법 (tuple은 불가, set은 가능은 하나 잘 사용 안함)
+  - 특히 새로운 리스트 만들때 append로 담지 않아도 되어 편리함
+    ```python
+    
+
+			
+			- num list에서 짝수만 담기
+			- 
+		- numlist에서 짝수는 제곱하고, 홀수는 그대로 담고 싶다면?
+			- 
+		- 중첩 반복문을 이용해, 2~9단까지 문자열 리스트에 담아보기
+			- 
+		- 컴프리헨션이 더 빠름을 확인해보자!  (%%timeit)
+			- 
+		- 컴프리헨션 예시
+			- 
+			- 
+		- 연습문제  (for 문을 컴프리헨션으로 변환)
+			- 
+			- 
+			- 
+			- 
+			- 
+			- 
+			  
+			  - 이런문제 진짜 많음. 결측치 제외하고 나서, 그다음에 평균으로 결측치 채우는 경우들
+			- 
+			- 
+			- 
+			- 
