@@ -70,9 +70,8 @@
 - **enumerate** 함수 
   - iterable한 객체를 꺼낼 때, 인덱스도 같이 꺼낼 수 있는 객체를 생성해준다. 
   - for문에서는 index를 같이 뽑아야 할 때가 많아 활용도 매우 높은 중요한 함수!
-  - enumerate 함수의 결과는 그 자체로 print out되지 않음. list로 변환해 확인 가능함
+  - enumerate 함수의 결과는 그 자체로 print out되지 않음
     - ex. <enumerate at 0x105e44c40> 식으로 객체로 반환됨 
-    - list(enumerate(score_list))
   - 따라서 추출할 때 unpacking 개념 활용, 'for index, score  in score_list' 식으로 꺼내서 확인해야
     ```python
     for index, score in enumerate(score_list):
@@ -80,6 +79,7 @@
     ```
 - **zip** 함수
   - 여러개의 iterable한 객체를 병렬로 꺼낼 수 있는 객체를 생성해줌 / 2개 이상의 객체 가능함
+  - enumerate 함수와 마찬가지로 zip함수 결과는 객체로 반환되므로 unpacking해서 확인해야 함
     ```python
     #zip함수 활용시
     for c,s in zip(class_list, score_list) :
